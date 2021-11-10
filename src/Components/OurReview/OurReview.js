@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import Rating from 'react-rating';
 import './OurReview.css';
 
 const OurReview = () => {
@@ -25,6 +26,13 @@ const OurReview = () => {
                             <Carousel.Caption>
                                 <div className="ratings_text">
                                     <h1>{reviews.email}</h1>
+                                    <br />
+                                        <Rating
+                                        initialRating={reviews.rateings}
+                                        fullSymbol="fas fa-star"
+                                        emptySymbol="far fa-star"
+                                        readonly>
+                                        </Rating>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis amet assumenda quas, fugiat et quia magni a sapiente facere?</p>
                                 </div>
                             </Carousel.Caption>

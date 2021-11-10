@@ -11,9 +11,15 @@ const useFirebase = () => {
   const [password, setPassword] = useState([]);
   const [nameUser, setNameUser] = useState([])
   const [error, setError] = useState([]);
+  const [admin, setAdmin] = useState(false)
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+        .then(res => res.json())
+        .then(data => setAdmin(data))
+    },[user.email])
       
     useEffect(()=>{
         const unsibscribed = onAuthStateChanged(auth, (user) => {
@@ -81,10 +87,13 @@ const useFirebase = () => {
       }
 
       console.log(user)
+      console.log('admin', admin)
 
       return {
         user,
         nameUser,
+        admin,
+        setAdmin,
         setNameUser,
         googleSignIn,
         handleEmailSignIn,

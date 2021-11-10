@@ -13,9 +13,14 @@ import DashBoardHome from '../DashBoardHome/DashBoardHome';
 import DashBoardPay from '../DashBoardPay/DashBoardPay';
 import DashboardOrder from '../DashboardOrder/DashboardOrder';
 import DashBoardReview from '../DashBoardReview/DashBoardReview';
+import DashBoardMakeAdmin from '../DashBoardMakeAdmin/DashBoardMakeAdmin';
+import useAuth from '../hooks/useAuth';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 
 const DashBoard = () => {
+    const {user, admin, logout} = useAuth();
     let { path, url } = useRouteMatch();
+    console.log("admin", admin)
     return (
         <div>
             <Row>
@@ -32,6 +37,12 @@ const DashBoard = () => {
                         <br />
                         <br />
                         <NavLink to={`${url}/ratings`}><Button variant="secondary" className="dash_board_btn">Rate Us</Button></NavLink>
+                        {
+                            admin.admin?<><br /><br /><NavLink to={`${url}/adminadd`}><Button variant="secondary" className="dash_board_btn">Add Admin</Button></NavLink><br /><br /><NavLink to={`${url}/manageorder`}><Button variant="secondary" className="dash_board_btn">Manage All Orders</Button></NavLink></>:""
+                        }
+                        <br />
+                        <br />
+                        <NavLink to="/login"><Button onClick={logout} variant="secondary" className="dash_board_btn">Log Out</Button></NavLink>
                     </div>
                 </Col>
                 <Col xs={12} md={8}>
@@ -48,6 +59,12 @@ const DashBoard = () => {
                         </Route>
                         <Route path={`${path}/ratings`}>
                             <DashBoardReview></DashBoardReview>
+                        </Route>
+                        <Route path={`${path}/adminadd`}>
+                            <DashBoardMakeAdmin></DashBoardMakeAdmin>
+                        </Route>
+                        <Route path={`${path}/manageorder`}>
+                            <ManageAllOrders></ManageAllOrders>
                         </Route>
                     </Switch>
                     </div>

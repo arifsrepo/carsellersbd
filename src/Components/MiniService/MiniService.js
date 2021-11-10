@@ -17,7 +17,7 @@ const MiniService = () => {
         <Container>
             <div className="car_card_holder">
                 {
-                    miniService.map(data => <Car key={data.id} data={data}></Car>)
+                    miniService.slice(0, 6).map(data => <Car key={data.id} data={data}></Car>)
                     // miniService.slice(0, 3).map(data => <Car data={data}></Car>)
                 }
             </div>
