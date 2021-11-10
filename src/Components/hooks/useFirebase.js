@@ -16,7 +16,7 @@ const useFirebase = () => {
   const provider = new GoogleAuthProvider();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://tranquil-savannah-84839.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data))
     },[user.email])
@@ -47,7 +47,7 @@ const useFirebase = () => {
 
     const addUsertODB = () => {
         const user = {email:email}
-        const url ='http://localhost:5000/users';
+        const url ='https://tranquil-savannah-84839.herokuapp.com/users';
         fetch(url, {
             method:'POST',
             headers: {
@@ -61,7 +61,7 @@ const useFirebase = () => {
 
     const upsertGoogleLog = email => {
         const newUsers = {email:email}
-        const url ='http://localhost:5000/users';
+        const url ='https://tranquil-savannah-84839.herokuapp.com/users';
         fetch(url, {
             method:'PUT',
             headers: {

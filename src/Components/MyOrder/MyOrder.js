@@ -9,7 +9,7 @@ const MyOrder = () => {
     const [myOrders, setMyOrders] = useState([]);
     const {user} = useAuth()
 
-    const url = `http://localhost:5000/orders/myorder?email=${user.email}`
+    const url = `https://tranquil-savannah-84839.herokuapp.com/orders/myorder?email=${user.email}`
     useEffect(() => {
         fetch(url)
         .then(res=> res.json())

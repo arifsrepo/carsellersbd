@@ -8,7 +8,7 @@ const MiniService = () => {
     const [miniService , setMiniService] = useState([])
 
     useEffect(()=> {
-        fetch('http://localhost:5000/products')
+        fetch('https://tranquil-savannah-84839.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setMiniService(data))
     },[])

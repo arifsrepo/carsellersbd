@@ -6,7 +6,7 @@ const Option = (props) => {
     const {product, address} = props.orders;
 
     const handleDelet = productName => {
-        const url = `http://localhost:5000/orders/myorder/${productName}`;
+        const url = `https://tranquil-savannah-84839.herokuapp.com/orders/myorder/${productName}`;
         fetch(url, {
             method:"DELETE"
         })

@@ -13,7 +13,7 @@ const MoreDetails = () => {
     const {user} = useAuth();
     const perams = useParams();
 
-    const url = `http://localhost:5000/products/${perams.carid}`;
+    const url = `https://tranquil-savannah-84839.herokuapp.com/products/${perams.carid}`;
     useEffect(()=> {
         fetch(url)
         .then(res => res.json())
@@ -32,7 +32,7 @@ const MoreDetails = () => {
     const handlePlaceOrders = e => {
         const newOrder = { email:user.email, address, subaddress, name:details.name, product: details}
         console.log(newOrder)
-        fetch('http://localhost:5000/orders',{
+        fetch('https://tranquil-savannah-84839.herokuapp.com/orders',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'

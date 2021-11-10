@@ -12,7 +12,7 @@ const DashBoardMakeAdmin = () => {
 
     const handleAdminSubmit = () => {
         const user = {email:newadmin}
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://tranquil-savannah-84839.herokuapp.com/users/admin',{
             method:'PUT',
             headers: {
                 'Content-Type': 'application/json'

@@ -6,9 +6,7 @@ const Colage = () => {
         <div>
             <br />
             <br />
-            <h1>Go Exotic Places</h1>
-            <br />
-            <p>When it comes to exploring exotic places, the choices are numerous. Whether you like peaceful destinations or vibrant landscapes, we have offers for you.</p>
+            <h1>Our Big Collection</h1>
             <br />
             <div>
                 <div className="grid_colage">

@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
     const imgRef = useRef();
 
     useEffect(()=> {
-        fetch('http://localhost:5000/products')
+        fetch('https://tranquil-savannah-84839.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setAllproduct(data))
     },[allproduct])
@@ -23,7 +23,7 @@ const ManageAllOrders = () => {
         const img = imgRef.current.value;
         const newAddData = {name, brand, price, img}
         console.log(newAddData)
-        fetch('http://localhost:5000/newproducts',{
+        fetch('https://tranquil-savannah-84839.herokuapp.com/newproducts',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'

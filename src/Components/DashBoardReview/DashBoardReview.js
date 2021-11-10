@@ -19,7 +19,7 @@ const DashBoardReview = () => {
 
     const handleRatingsSubmit = () => {
         const newRatingsData = {email:user.email, text:textRate, rateings:numberRate}
-        fetch('http://localhost:5000/review',{
+        fetch('https://tranquil-savannah-84839.herokuapp.com/review',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'

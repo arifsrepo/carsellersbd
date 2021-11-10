@@ -7,7 +7,7 @@ const Explore = () => {
     const [oueServices , setOueServices] = useState([])
 
     useEffect(()=> {
-        fetch('http://localhost:5000/products')
+        fetch('https://tranquil-savannah-84839.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setOueServices(data))
     },[])
@@ -16,7 +16,6 @@ const Explore = () => {
             <div className="car_card_holder">
                 {
                     oueServices.map(data => <Car key={data.id} data={data}></Car>)
-                    // miniService.slice(0, 3).map(data => <Car data={data}></Car>)
                 }
             </div>
         </Container>

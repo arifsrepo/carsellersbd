@@ -6,7 +6,7 @@ const Cars = (props) => {
     const {_id, name, brand, img, price} = props.data;
 
     const handleProductDelet = productName => {
-        const url = `http://localhost:5000/admin/products/${productName}`;
+        const url = `https://tranquil-savannah-84839.herokuapp.com/admin/products/${productName}`;
         fetch(url, {
             method:"DELETE"
         })
