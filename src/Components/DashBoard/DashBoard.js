@@ -16,6 +16,7 @@ import DashBoardReview from '../DashBoardReview/DashBoardReview';
 import DashBoardMakeAdmin from '../DashBoardMakeAdmin/DashBoardMakeAdmin';
 import useAuth from '../hooks/useAuth';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import AdminRoute from '../Login/AdminRoute/AdminRoute';
 
 const DashBoard = () => {
     const {user, admin, logout} = useAuth();
@@ -60,12 +61,12 @@ const DashBoard = () => {
                         <Route path={`${path}/ratings`}>
                             <DashBoardReview></DashBoardReview>
                         </Route>
-                        <Route path={`${path}/adminadd`}>
+                        <AdminRoute path={`${path}/adminadd`}>
                             <DashBoardMakeAdmin></DashBoardMakeAdmin>
-                        </Route>
-                        <Route path={`${path}/manageorder`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageorder`}>
                             <ManageAllOrders></ManageAllOrders>
-                        </Route>
+                        </AdminRoute>
                     </Switch>
                     </div>
                 </Col>

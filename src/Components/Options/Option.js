@@ -11,7 +11,7 @@ const Option = (props) => {
             method:"DELETE"
         })
         .then(res => res.json())
-        .then(data => {
+        .then(data => {                             // const conf = confirm('') this function is not working without any reason
             if(data.deletedCount > 0){
                 alert("Delete Successfull")
             }

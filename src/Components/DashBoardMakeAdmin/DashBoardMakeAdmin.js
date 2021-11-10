@@ -30,7 +30,7 @@ const DashBoardMakeAdmin = () => {
 
     return (
         <Container>
-        <h1>DashBoardMakeAdmin</h1>
+        <h1>Admin Dashboard</h1>
         <Form.Label htmlFor="inputPassword5">New Admin Email</Form.Label>
         <Form.Control  type="text"  onBlur={handleAdminEmail} aria-describedby="passwordHelpBlock" />
         <br />
