@@ -36,7 +36,8 @@ const DashBoardReview = () => {
 
     return (
         <div>
-            <h1>DashBoardReview</h1>
+            <br />
+            <h1>Feedback Section</h1>
             <br />
             <br />
             <Row className="g-2">

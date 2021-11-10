@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import Car from '../Car/Car';
+import Cars from '../Cars/Cars';
 import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
     const [allproduct , setAllproduct] = useState([])
-    const [addproduct, setAddproducts] = useState({})
     const nameRef = useRef();
     const brandRef = useRef();
     const priceRef = useRef();
@@ -15,7 +14,7 @@ const ManageAllOrders = () => {
         fetch('http://localhost:5000/products')
         .then(res => res.json())
         .then(data => setAllproduct(data))
-    },[])
+    },[allproduct])
 
     const handleAddOrder = e => {
         const name = nameRef.current.value;
@@ -40,9 +39,6 @@ const ManageAllOrders = () => {
         e.preventDefault()
     }
 
-
-
-    console.log(addproduct)
     return (
         <Container>
         <br />
@@ -69,7 +65,7 @@ const ManageAllOrders = () => {
         </Form>
             <div className="car_card_holder">
                 {
-                    allproduct.map(data => <Car key={data.id} data={data}></Car>)
+                    allproduct.map(data => <Cars key={data.id} data={data}></Cars>)
                 }
             </div>
         </Container>

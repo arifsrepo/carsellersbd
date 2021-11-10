@@ -17,6 +17,7 @@ import DashBoardMakeAdmin from '../DashBoardMakeAdmin/DashBoardMakeAdmin';
 import useAuth from '../hooks/useAuth';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
+import AllOrders from '../AllOrders/AllOrders';
 
 const DashBoard = () => {
     const {user, admin, logout} = useAuth();
@@ -39,11 +40,13 @@ const DashBoard = () => {
                         <br />
                         <NavLink to={`${url}/ratings`}><Button variant="secondary" className="dash_board_btn">Rate Us</Button></NavLink>
                         {
-                            admin.admin?<><br /><br /><NavLink to={`${url}/adminadd`}><Button variant="secondary" className="dash_board_btn">Add Admin</Button></NavLink><br /><br /><NavLink to={`${url}/manageorder`}><Button variant="secondary" className="dash_board_btn">Manage All Orders</Button></NavLink></>:""
+                            admin.admin?<><br /><br /><NavLink to={`${url}/adminadd`}><Button variant="secondary" className="dash_board_btn">Add Admin</Button></NavLink><br /><br /><NavLink to={`${url}/manageinventory`}><Button variant="secondary" className="dash_board_btn">Manage All Inventory</Button></NavLink><br /><br /><NavLink to={`${url}/allorders`}><Button variant="secondary" className="dash_board_btn">Manage All Orders</Button></NavLink></>:""
                         }
                         <br />
                         <br />
                         <NavLink to="/login"><Button onClick={logout} variant="secondary" className="dash_board_btn">Log Out</Button></NavLink>
+                        <br />
+                        <br />
                     </div>
                 </Col>
                 <Col xs={12} md={8}>
@@ -64,8 +67,11 @@ const DashBoard = () => {
                         <AdminRoute path={`${path}/adminadd`}>
                             <DashBoardMakeAdmin></DashBoardMakeAdmin>
                         </AdminRoute>
-                        <AdminRoute path={`${path}/manageorder`}>
+                        <AdminRoute path={`${path}/manageinventory`}>
                             <ManageAllOrders></ManageAllOrders>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/allorders`}>
+                            <AllOrders></AllOrders>
                         </AdminRoute>
                     </Switch>
                     </div>

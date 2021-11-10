@@ -29,7 +29,7 @@ const Option = (props) => {
                     <h6>Shipping Address : {address}</h6>
                     <h6>Color : {product.color}</h6>
                     <h6>Price : $ {product.price}</h6>
-                    <Button onClick={()=> handleDelet(product.name)}>Cancel Plane</Button>
+                    <Button onClick={()=> handleDelet(product.name)}>Cancel Order</Button>
                 </div>
             </div>
         </div>

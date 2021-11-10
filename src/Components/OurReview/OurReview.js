@@ -17,7 +17,6 @@ const OurReview = () => {
     console.log(review)
     return (
         <div>
-            <h1>OurReview</h1>
             <Carousel fade>
                 {
                     review.map(reviews => 
@@ -33,7 +32,7 @@ const OurReview = () => {
                                         emptySymbol="far fa-star"
                                         readonly>
                                         </Rating>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officiis amet assumenda quas, fugiat et quia magni a sapiente facere?</p>
+                                    <p>{reviews.text}</p>
                                 </div>
                             </Carousel.Caption>
                         </Carousel.Item>)
