@@ -1,0 +1,13 @@
+.nav_style{
+    color: rgb(199, 198, 198);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.nav_style:hover{
+    color: white;
+}
+
+.nav_user_info{
+    color: white;
+}

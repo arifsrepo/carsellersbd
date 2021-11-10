@@ -1,0 +1,4 @@
+.car_card_holder{
+    display: flex;
+    justify-content: space-between
+}
